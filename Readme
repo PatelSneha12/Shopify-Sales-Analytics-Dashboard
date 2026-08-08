@@ -1,0 +1,54 @@
+# Restaurant Bill Generator
+
+A desktop application built with Python and Tkinter that lets you add menu items to an order, calculates the subtotal, tax and total, and generates a printable PDF bill.
+
+## Features
+
+- Simple GUI for entering customer name and order items
+- Add multiple items with name, price and quantity
+- Live running list of added items with line totals
+- Automatic calculation of subtotal, tax (8%) and total
+- One-click PDF bill generation with a save-file dialog
+- "Clear Bill" option to reset the form and start a new order
+- Input validation — blocks empty fields, non-numeric prices, and non-positive values
+
+## How It Works
+
+1. Enter the customer's name
+2. Add items one at a time (name, price, quantity) — each gets added to the running order list
+3. Click **Generate Bill** to calculate totals and export a formatted PDF invoice
+4. Click **Clear Bill** to reset and start a new order
+
+The generated PDF includes a restaurant header, the itemized order table, and a subtotal/tax/total summary — built using ReportLab.
+
+> Note: the restaurant name, address and phone number in the PDF header are currently hardcoded placeholders (`bill_generator.py`) — update these to your own business details before using it for a real restaurant. The tax rate (8%) is also configurable via the `tax_rate` parameter in `calculate_totals()`.
+
+## Tech Stack
+
+- **Python** — core application logic
+- **Tkinter** — desktop GUI
+- **ReportLab** — PDF generation
+
+## Project Structure
+
+```
+Restaurant-Bill-Generater/
+├── bill_generator.py       # MenuItem/Bill classes, totals calculation, PDF generation
+├── gui_bill_generator.py   # Tkinter GUI — entry point
+└── README.md
+```
+
+## How to Run
+
+```bash
+git clone https://github.com/PatelSneha12/Restaurant-Bill-Generater.git
+cd Restaurant-Bill-Generater
+pip install reportlab
+python gui_bill_generator.py
+```
+
+## Author
+
+**Sneha Patel**
+Data Analyst | Business Analytics Enthusiast
+[LinkedIn](https://www.linkedin.com/in/snehapatel1212) · [GitHub](https://github.com/PatelSneha12)
